@@ -11,3 +11,20 @@ export function isWebp() {
 		document.documentElement.classList.add(className);
 	})
 }
+
+export function ibg() {
+    let ibg = document.querySelectorAll(".ibg");
+    for (let i = 0; i < ibg.length; i++) {
+        if (ibg[i].querySelector('img')) {
+            ibg[i].style.backgroundImage = `url(${ibg[i].querySelector('img').getAttribute('src')})`;
+        }
+    }
+}
+
+export function toggleClassActive() {
+	document.querySelector('.icon-menu').addEventListener('click', () => {
+		document.querySelector('.icon-menu').classList.toggle('_active')
+		document.querySelector('.menu__body').classList.toggle('_active')
+		document.querySelector('body').classList.toggle('lock')
+	})
+}
