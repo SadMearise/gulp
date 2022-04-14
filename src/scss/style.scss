@@ -2,7 +2,7 @@
 @use 'sass:math';
 
 // Подключаемые шрифты
-@import "fonts";
+// @import "fonts";
 
 // Шрифт по умолчанию
 $fontfamily:"";
@@ -12,14 +12,16 @@ $containerWidth: 1100;
 $containerPadding: 40;
 $containerSidePadding: math.div($containerPadding, 2);
 $breakpoint1400: 1339.98 + px;
+$breakpoint1200: 1199.98 + px;
 $breakpoint992: 991.98 + px;
 $breakpoint768: 767.98 + px;
+$breakpoint576: 575.98 + px;
 $breakpoint480: 479.98 + px;
 
 // Обнуление, общие параметры
-@import 'null';
-@import 'mixins';
-@import 'libs';
+@import 'base/null';
+@import 'base/mixins';
+@import 'libs/libs';
 
 // Оболочка
 body {
@@ -63,8 +65,28 @@ body {
 
 // Подключение файлов/стилей/страниц и элементов
 
-@import "ui";
+@import "base/ui";
+@import "common";
 @import "header";
+@import "home";
 @import "footer";
 
-// Основной блок
+// Основные элементы
+// Пример: 
+
+// <-- HTML -->
+// <main class="page page__home">
+// 	<section class="page__main-block"></section>
+// </main>
+// <-- / HTML -->
+
+// <-- CSS -->
+// .page {
+
+// 	&__home {
+// 	}
+
+// 	&__main-block {
+// 	}
+// }
+// <-- / CSS -->
