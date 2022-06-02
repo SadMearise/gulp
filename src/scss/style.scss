@@ -2,13 +2,13 @@
 @use 'sass:math';
 
 // Подключаемые шрифты
-// @import "fonts";
+// @import "fonts/fonts";
 
 // Шрифт по умолчанию
 $fontfamily:"";
 
 // Переменные
-$containerWidth: 1100;
+$containerWidth: 1100; // Вписываем ширину контейнера как она есть
 $containerPadding: 40;
 $containerSidePadding: math.div($containerPadding, 2);
 $breakpoint1400: 1339.98 + px;
@@ -18,10 +18,13 @@ $breakpoint768: 767.98 + px;
 $breakpoint576: 575.98 + px;
 $breakpoint480: 479.98 + px;
 
+// Цвета
+
 // Обнуление, общие параметры
 @import 'base/null';
 @import 'base/mixins';
 @import 'libs/libs';
+// @import 'base/functions';
 
 // Оболочка
 body {
@@ -39,7 +42,7 @@ body {
 }
 
 // Основная сетка
-._container {
+.container {
 	max-width: ($containerWidth + $containerPadding) + px;
 	width: 100%;
 	margin: 0 auto;
@@ -62,6 +65,43 @@ body {
 	}
 
 }
+
+.vertical-indent {
+	&--xs {
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	&--s {
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	&--m {
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	&--l {
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	&--xl {
+		padding-top: 0px;
+		padding-bottom: 0px;
+
+	}
+	@media (max-width: $breakpoint1200) {
+	}
+	@media (max-width: $breakpoint992) {
+	}
+	@media (max-width: $breakpoint768) {
+	}
+}
+
+// классы для вставки 
+// vertical-indent vertical-indent--xs
+// vertical-indent vertical-indent--s
+// vertical-indent vertical-indent--m
+// vertical-indent vertical-indent--l
+// vertical-indent vertical-indent--xl
 
 // Подключение файлов/стилей/страниц и элементов
 
