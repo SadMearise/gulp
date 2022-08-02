@@ -25,8 +25,8 @@ export function toggleClassActive() {
 	var el = document.querySelector('.icon-menu');
 	if(el) {
 		document.querySelector('.icon-menu').addEventListener('click', () => {
-			document.querySelector('.icon-menu').classList.toggle('_active')
-			document.querySelector('.menu__body').classList.toggle('_active')
+			document.querySelector('.icon-menu').classList.toggle('active')
+			document.querySelector('.menu__body').classList.toggle('active')
 			document.querySelector('body').classList.toggle('lock')
 		})
 	}

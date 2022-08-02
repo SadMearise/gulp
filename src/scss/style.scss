@@ -4,27 +4,43 @@
 // Подключаемые шрифты
 // @import "fonts/fonts";
 
+// Функции
+@import 'base/functions';
+
 // Шрифт по умолчанию
-$fontfamily:"";
+$fontFamily:"";
 
 // Переменные
-$containerWidth: 1100; // Вписываем ширину контейнера как она есть
+$minWidth: 375;
+$maxWidth: 1440;
+$containerWidth: 1176; // Вписываем ширину контейнера как она есть
 $containerPadding: 40;
 $containerSidePadding: math.div($containerPadding, 2);
-$breakpoint1400: 1339.98 + px;
-$breakpoint1200: 1199.98 + px;
-$breakpoint992: 991.98 + px;
-$breakpoint768: 767.98 + px;
-$breakpoint576: 575.98 + px;
-$breakpoint480: 479.98 + px;
+$breakpoint1400: 1339.98;
+$breakpoint1200: 1199.98;
+$breakpoint992: 991.98;
+$breakpoint768: 767.98;
+$breakpoint576: 575.98;
+$breakpoint480: 479.98;
+$breakpoint375: 374.98;
 
-// Цвета
+// font-weight
+$fw-200: 200;
+$fw-300: 300;
+$fw-400: 400;
+$fw-500: 500;
+$fw-600: 600;
+$fw-700: 700;
+
+// font-size
+
+// line-height
+
+// colors
 
 // Обнуление, общие параметры
 @import 'base/null';
 @import 'base/mixins';
-@import 'libs/libs';
-// @import 'base/functions';
 
 // Оболочка
 body {
@@ -46,24 +62,23 @@ body {
 	max-width: ($containerWidth + $containerPadding) + px;
 	width: 100%;
 	margin: 0 auto;
-	padding: 0 $containerSidePadding + px;
+	padding: 0 ($containerSidePadding + px);
 
-	@media (max-width: $breakpoint1400) {
-		max-width: 1100px;
+	@media (max-width: em($breakpoint1400)) {
+		max-width: rem(1100);
 	}
 
-	@media (max-width: $breakpoint992) {
-		max-width: 970px;
+	@media (max-width: em($breakpoint992)) {
+		max-width: rem(970);
 	}
 
-	@media (max-width: $breakpoint768) {
-		max-width: 750px;
+	@media (max-width: em($breakpoint768)) {
+		max-width: rem(750);
 	}
 
-	@media (max-width: $breakpoint480) {
+	@media (max-width: em($breakpoint480)) {
 		max-width: none;
 	}
-
 }
 
 .vertical-indent {
