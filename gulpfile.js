@@ -14,7 +14,7 @@ global.app = {
 	plugins: plugins
 }
 
-//Импорт задач
+// Импорт задач
 import { copy } from "./gulp/tasks/copy.js";
 import { reset } from "./gulp/tasks/reset.js";
 import { html } from "./gulp/tasks/html.js";
